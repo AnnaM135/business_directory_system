@@ -1,40 +1,6 @@
 #include <string>
+#include "headers/Organization.h"
 
-class Organization {
-public:
-    std::string name;
-    std::string type;
-    std::string registrationNumber;
-    std::string address;
-    std::string phone;
-    std::string email;
-    std::string website;
-    std::string director;
-    double monthlyBudget;
-
-    virtual void printInfo();
-    virtual double calculateAnnualBudget();
-};
-
-class Foundation : public Organization {
-public:
-    void printInfo() override;
-};
-
-class NGO : public Organization {
-public:
-    void printInfo() override;
-};
-
-class LLC : public Organization {
-public:
-    void printInfo() override;
-};
-
-class JSC : public Organization {
-public:
-    void printInfo() override;
-};
 
 class Retail : public LLC {
 public:

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <gtest/gtest.h>
-#include "../src/main.h" 
+// #include "../src/headers/Foundation.h" 
 
 // Test case for 0 and 1
 TEST(TestSuite, Power0)
