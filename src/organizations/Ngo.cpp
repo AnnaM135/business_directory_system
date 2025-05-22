@@ -2,5 +2,8 @@
 #include "../headers/Ngo.h"
 
 void NGO::printInfo() {
-    std::cout << "NGO Name: " << name << std::endl;
+    Organization::printInfo();
+    for (int i = 0; i < focusAreas.size(); ++i) {
+        std::cout << "Focus Area: " << focusAreas[i] << std::endl;
+    }
 }

@@ -3,7 +3,7 @@
 #include "./headers/Foundation.h"
 #include "./headers/Ngo.h"
 #include "./headers/LLC.h"
-#include "./headers/JSC.h"
+#include "./headers/CJSC.h"
 
 // class Retail : public LLC {
 //     public:
@@ -46,26 +46,41 @@
 
 int main() {
 
-    Organization myOrg;
-    myOrg.name = "My Test Org";
-    myOrg.type = "Non-profit";
-
-    myOrg.printInfo();
-
     Foundation f;
     f.name = "My Foundation";
+    f.director = "John Smith";
+    f.monthlyBudget = 5000;
+    f.donationIncome = 20000;
+    f.boardMembers = {"Alice", "Bob", "Charlie"};
     f.printInfo();
 
     NGO n;
     n.name = "My NGO";
+    n.director = "Emma Brown";
+    n.monthlyBudget = 3000;
+    n.missionStatement = "Help education in rural areas.";
+    n.projects = {"Project A", "Project B"};
+    n.focusAreas = {"Environment", "Youth Education", "Human Rights"};
     n.printInfo();
 
     LLC l;
     l.name = "My LLC";
+    l.director = "Karen Hakobyan";
+    l.monthlyBudget = 8000;
+    l.owners = {"Karen", "Narek"};
+    l.isVATRegistered = true;
     l.printInfo();
 
-    JSC j;
+    CJSC j;
     j.name = "My JSC";
+    j.director = "David Grigoryan";
+    j.monthlyBudget = 10000;
+    j.totalCapital = 500000;
+    j.shareholders = {
+        {"David", 40},
+        {"Anna", 30},
+        {"Levon", 30}
+    };
     j.printInfo();
 
     // std::cout << " " << std::endl;

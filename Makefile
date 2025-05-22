@@ -6,8 +6,8 @@ GTEST_LIB = -lgtest -lgtest_main -lpthread
 
 all: $(BUILD_DIR) main run_tests
 
-main: $(BUILD_DIR)/test.o $(BUILD_DIR)/main.o $(BUILD_DIR)/Organization.o $(BUILD_DIR)/Foundation.o $(BUILD_DIR)/Ngo.o $(BUILD_DIR)/LLC.o $(BUILD_DIR)/JSC.o
-	clang++ -o $(BUILD_DIR)/test $(CXXFLAGS) $(BUILD_DIR)/test.o $(BUILD_DIR)/main.o $(BUILD_DIR)/Organization.o $(BUILD_DIR)/Foundation.o $(BUILD_DIR)/Ngo.o $(BUILD_DIR)/LLC.o $(BUILD_DIR)/JSC.o $(GTEST_LIB)
+main: $(BUILD_DIR)/test.o $(BUILD_DIR)/main.o $(BUILD_DIR)/Organization.o $(BUILD_DIR)/Foundation.o $(BUILD_DIR)/Ngo.o $(BUILD_DIR)/LLC.o $(BUILD_DIR)/CJSC.o
+	clang++ -o $(BUILD_DIR)/test $(CXXFLAGS) $(BUILD_DIR)/test.o $(BUILD_DIR)/main.o $(BUILD_DIR)/Organization.o $(BUILD_DIR)/Foundation.o $(BUILD_DIR)/Ngo.o $(BUILD_DIR)/LLC.o $(BUILD_DIR)/CJSC.o $(GTEST_LIB)
 
 $(BUILD_DIR)/test.o: $(TEST_DIR)/test.cpp
 	clang++ -c $(CXXFLAGS) $(TEST_DIR)/test.cpp -o $(BUILD_DIR)/test.o
@@ -27,8 +27,8 @@ $(BUILD_DIR)/Ngo.o: $(SOURCE_DIR)/organizations/Ngo.cpp
 $(BUILD_DIR)/LLC.o: $(SOURCE_DIR)/organizations/LLC.cpp
 	clang++ -c $(CXXFLAGS) $(SOURCE_DIR)/organizations/LLC.cpp -o $(BUILD_DIR)/LLC.o
 
-$(BUILD_DIR)/JSC.o: $(SOURCE_DIR)/organizations/JSC.cpp
-	clang++ -c $(CXXFLAGS) $(SOURCE_DIR)/organizations/JSC.cpp -o $(BUILD_DIR)/JSC.o
+$(BUILD_DIR)/CJSC.o: $(SOURCE_DIR)/organizations/CJSC.cpp
+	clang++ -c $(CXXFLAGS) $(SOURCE_DIR)/organizations/CJSC.cpp -o $(BUILD_DIR)/CJSC.o
 
 run_tests: $(BUILD_DIR)/test
 	$(BUILD_DIR)/test

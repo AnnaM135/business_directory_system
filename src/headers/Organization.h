@@ -6,7 +6,6 @@
 class Organization {
     public:
         std::string name;
-        std::string type;
         std::string registrationNumber;
         std::string address;
         std::string phone;
